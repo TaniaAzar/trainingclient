@@ -3,7 +3,7 @@ MAINTAINER TaniaAzarova
 RUN apt-get update \
 && apt-get install -y git \
 && cd /root \
-&& get clone https://github.com/TaniaAzar/trainingclient \
+&& git clone https://github.com/TaniaAzar/trainingclient \
 && cd trainingclient/ \
 && echo "oracle-java10-installer shared/accepted-oracle-license-v1-1 boolean true" | debconf-set-selections \
 && apt-get update \
