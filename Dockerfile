@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER TaniaAzarova
+RUN mkdir /home/training_client
+WORKDIR /home/training_client
 RUN apt-get update \
 && apt-get install -y git \
 && cd /root \
