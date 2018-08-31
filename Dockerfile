@@ -1,11 +1,11 @@
 FROM ubuntu
 MAINTAINER TaniaAzarova
-RUN mkdir /home/training_client
-WORKDIR /home/training_client
+RUN mkdir /root/trainingclient
+WORKDIR /root/trainingclient/src
 RUN apt-get update \
-&& apt-get install -y git \
+&& apt-get install -y git openjdk-8-jdk\
 && cd /root \
 && git clone https://github.com/TaniaAzar/trainingclient \
-&& cd /home/training_client/ \
-&& javac Client.java
-ENTRYPOINT ["java", "-jar", "Client"]
+&& cd /root/trainingclient/src \
+&& javac by/training/client/Client.java
+ENTRYPOINT ["java", "by/training/client/Client"]
