@@ -9,9 +9,8 @@ public class Client{
 
         String host = "localhost";
         int port = 8989;
-        Socket clientSocket = null;
         try {
-            clientSocket = new Socket(host, port);
+            Socket clientSocket = new Socket(host, port);
 
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
@@ -26,14 +25,9 @@ public class Client{
 
         System.out.println("FROM SERVER: " + outServerLine);
 
+        clientSocket.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            try {
-                clientSocket.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
     }
 }
